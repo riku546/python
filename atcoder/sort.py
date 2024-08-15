@@ -2,7 +2,7 @@ def selectionSort(nums):
   length_nums = len(nums)
   for i in range(length_nums - 1 , -1 , -1):
     temp = i
-    for j in range(i , -1 , -1):
+    for j in range(i -1 , -1 , -1):
       if nums[temp] > nums[j]:
         temp = j
     nums[i] , nums[temp] = nums[temp] , nums[i]
