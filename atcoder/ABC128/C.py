@@ -51,20 +51,35 @@ def count_valid_combinations(n, m, switches, p):
 #     return result
 
 
-def bit_full_search(N, S, A):
-    for i in range(1 << N):
-        total = 0
-        for j in range(N):
+# def bit_full_search(N, S, A):
+#     for i in range(1 << N):
+#         total = 0
+#         for j in range(N):
+#             if i & (1 << j):
+#                 total += A[j]
+
+#         if total == S:
+#             return "Yes"
+
+#     return "No"
+
+
+def bit_example(N):
+    result = []
+    for i in range(1 << len(N)):
+        temp = []
+        for j in range(len(N)):
             if i & (1 << j):
-                total += A[j]
+                temp.append(N[j])
+        result.append(temp)
 
-        if total == S:
-            return "Yes"
-
-    return "No"
+    return result
 
 
 if __name__ == "__main__":
-    N, S = map(int, input().split())
-    A = list(map(int, input().split()))
-    print(bit_full_search(N, S, A))
+    # N, S = map(int, input().split())
+    # A = list(map(int, input().split()))
+    # print(bit_full_search(N, S, A))
+    import random
+    nums = [random.randint(0 , 1000) for i in range(15)]
+    print(bit_example(nums))
