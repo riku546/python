@@ -37,22 +37,34 @@ def count_valid_combinations(n, m, switches, p):
     return valid_count
 
 
-def example(nums):
-    result = []
-    n = len(nums)
-    for i in range(1 << n):
-        temp = []
-        for j in range(n):
-            if i & (1 << j):
-                print(bin(i)[2:], bin(1 << j)[2:] , nums[j])
-                temp.append(nums[j])
+# def example(nums):
+#     result = []
+#     n = len(nums)
+#     for i in range(1 << n):
+#         temp = []
+#         for j in range(n):
+#             if i & (1 << j):
+#                 print(bin(i)[2:], bin(1 << j)[2:] , nums[j])
+#                 temp.append(nums[j])
 
-        result.append(temp)
-    return result
+#         result.append(temp)
+#     return result
+
+
+def bit_full_search(N, S, A):
+    for i in range(1 << N):
+        total = 0
+        for j in range(N):
+            if i & (1 << j):
+                total += A[j]
+
+        if total == S:
+            return "Yes"
+
+    return "No"
 
 
 if __name__ == "__main__":
-    # example(13, 5)
-    nums = [1, 2, 3]
-    
-    print(example(nums))
+    N, S = map(int, input().split())
+    A = list(map(int, input().split()))
+    print(bit_full_search(N, S, A))
