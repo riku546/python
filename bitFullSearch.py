@@ -42,9 +42,26 @@
 #     return "No"
 
 
+# def bit_full_search(N, M, s, p):
+#     result = 0
+#     for i in range(1 << N):
+#         is_all_on = True
+#         for k in range(M):
+#             count = 0
 
+#             for j in range(s[k][0]):
+#                 if i & (1 << (s[k][j + 1] - 1)):
+#                     count += 1
+
+#             if count % 2 != p[k]:
+#                 is_all_on = False
+#                 break
+
+#         if is_all_on:
+#             result += 1
+
+#     return result
 
 
 if __name__ == "__main__":
-    N = int(input())
-    print(multiple_table(N))
+    pass
