@@ -33,13 +33,16 @@
 #     return all_subsets
 
 
-def multiple_table(N):
-    for i in range(1, 10):
-        for j in range(1, 10):
-            if (i * j) == N:
-                return "Yes"
+# def multiple_table(N):
+#     for i in range(1, 10):
+#         for j in range(1, 10):
+#             if (i * j) == N:
+#                 return "Yes"
 
-    return "No"
+#     return "No"
+
+
+
 
 
 if __name__ == "__main__":
