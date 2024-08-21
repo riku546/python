@@ -16,26 +16,32 @@
 #     # return all_subsets
 
 
-def bit_full_search(elements):
-    all_subsets = []
-    n = len(elements)
+# def bit_full_search(elements):
+#     all_subsets = []
+#     n = len(elements)
 
-    for i in range(1 << n):
-        subset = []
+#     for i in range(1 << n):
+#         subset = []
 
-        for j in range(n):
-            if i & (1 << j):
-                print(elements[j])
-                subset.append(elements[j])
+#         for j in range(n):
+#             if i & (1 << j):
+#                 print(elements[j])
+#                 subset.append(elements[j])
 
-        all_subsets.append(subset)
+#         all_subsets.append(subset)
 
-    return all_subsets
+#     return all_subsets
+
+
+def multiple_table(N):
+    for i in range(1, 10):
+        for j in range(1, 10):
+            if (i * j) == N:
+                return "Yes"
+
+    return "No"
 
 
 if __name__ == "__main__":
-    # 使用例
-    elements = [1, 2, 3]
-    subsets = bit_full_search(elements)
-    for subset in subsets:
-        print(subset)
+    N = int(input())
+    print(multiple_table(N))
