@@ -2,7 +2,7 @@ import copy
 
 
 def formula(list_S, S):
-    many_formula = []
+    total = 0
     len_s = len(S)
     for i in range(1 << (len_s - 1)):
 
@@ -20,9 +20,15 @@ def formula(list_S, S):
                 copy_list_S[k] = "+"
             r += 1
 
-        many_formula.append(copy_list_S)
+        temp_s = ""
+        for e in range(len(copy_list_S)):
+            temp_s += copy_list_S[e]
 
-    return many_formula
+        split_temp_s = temp_s.split("+")
+        for w in range(len(split_temp_s)):
+            total += int(split_temp_s[w])
+
+    return total
 
 
 def between_space(S):
