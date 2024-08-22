@@ -102,28 +102,28 @@
 #   return nums
 
 
-def partition(nums, low, high):
-    i = low - 1
-    pivot = nums[high]
+# def partition(nums, low, high):
+#     i = low - 1
+#     pivot = nums[high]
 
-    for j in range(low, high):
-        if nums[j] <= pivot:
-            i += 1
-            nums[i], nums[j] = nums[j] , nums[i]
+#     for j in range(low, high):
+#         if nums[j] <= pivot:
+#             i += 1
+#             nums[i], nums[j] = nums[j] , nums[i]
 
-    i += 1
-    nums[i], nums[high] = nums[high], nums[i]
+#     i += 1
+#     nums[i], nums[high] = nums[high], nums[i]
 
-    return i
+#     return i
 
 
-def quick_sort(nums, low, high):
-    if low < high:
-        partition_index = partition(nums, low, high)
-        quick_sort(nums, low, partition_index - 1)
-        quick_sort(nums, partition_index + 1, high)
+# def quick_sort(nums, low, high):
+#     if low < high:
+#         partition_index = partition(nums, low, high)
+#         quick_sort(nums, low, partition_index - 1)
+#         quick_sort(nums, partition_index + 1, high)
         
-    return nums
+#     return nums
 
 
 if __name__ == "__main__":
