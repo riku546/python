@@ -9,8 +9,6 @@
 #     return result
 
 
-
-
 # def calc_total_h_w(nums, H, W, current_H, current_W):
 #     total = 0
 
@@ -32,3 +30,23 @@
 # ]
 
 # print(handle(nums, 2, 10))
+
+
+def bit_full_search(N, S, A):
+    for i in range(1 << N):
+        total = 0
+        for j in range(N):
+            if i & (1 << j):
+                total += A[j]
+
+        if total == S:
+            return "Yes"
+
+    return "No"
+
+
+if __name__ == "__main__":
+    N, S = list(map(int, input().split()))
+    A = list(map(int, input().split()))
+
+    print(bit_full_search(N, S, A))
