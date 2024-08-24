@@ -1,8 +1,7 @@
 def test_keys(temp, C, K):
     for x in range(len(C)):
-
         count = 0
-
+        
         for m in range(1, int(C[x][0]) + 1):
 
             if int(C[x][m]) in temp:
@@ -34,8 +33,7 @@ def keys(N, M, K, C):
     return result
 
 
-if __name__ == "__main__":
-    N, M, K = list(map(int, input().split()))
-    C = [list(input().split()) for i in range(M)]
+N, M, K = list(map(int, input().split()))
+C = [list(input().split()) for i in range(M)]
 
-    print(keys(N, M, K, C))
+print(keys(N, M, K, C))
