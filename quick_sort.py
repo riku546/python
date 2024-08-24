@@ -122,7 +122,31 @@
 #         partition_index = partition(nums, low, high)
 #         quick_sort(nums, low, partition_index - 1)
 #         quick_sort(nums, partition_index + 1, high)
-        
+
+#     return nums
+
+
+# def partition(nums, low, high):
+#     pivot = nums[high]
+#     i = low - 1
+
+#     for j in range(low, high):
+#         if nums[j] <= pivot:
+#             i += 1
+#             nums[j], nums[i] = nums[i], nums[j]
+
+#     i += 1
+#     nums[high], nums[i] = nums[i], nums[high]
+
+#     return i
+
+
+# def quick_sort(nums, low, high):
+#     if low <= high:
+#         partition_index = partition(nums, low, high)
+#         quick_sort(nums, low, partition_index - 1)
+#         quick_sort(nums, partition_index + 1, high)
+
 #     return nums
 
 
